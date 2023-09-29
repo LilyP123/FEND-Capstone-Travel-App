@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Travel Planner</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+              Travel Planner
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form id="myForm" class="">
+                    <input id="city-input" type="text" name="input" value="" placeholder="Enter a city" autocomplete="off">
+                    <input id="country-input" type="text" name="input" value="" placeholder="Enter the two letter country shortname (e.g 'AU')" autocomplete="off">
+                    <p>Date you plan to leave</p>
+                    <input type="date" id="trip-date" required>
+                    <p>Date you plan to return</p>
+<input type="date" id="end-date" name="end-date">
+                    <input type="submit" name="" value="submit">
+                  </form>
+            </section>
+
+            <section>
+                <strong>Travel Planner</strong><h1 id="title"></h1>
+                    <p id="description"></p>
+                    <div id="results">
+                    <p>Click submit to see your weather forecast.</p>
+                    <p><span id="cityInput"></span></p>
+                    <p><span id="cityName"></span></p>
+                    <p><span id="highTemperature"></span></p>
+                    <p><span id="lowTemperature"></span></p>
+                    <p><span id="Cloudiness"></span></p>
+                    <p id="countdown-text"></p>
+                    <img id="image">
+                  </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Project by Lily P for Udacity. 2023.</p>
+        </footer>
+        <script>
+             if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                  .then(registration => {
+                    console.log('Service Worker registered:', registration);
+                  })
+                  .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                  });
+              });
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+    </body>
+</html>
